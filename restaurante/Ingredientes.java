@@ -7,7 +7,7 @@ public class Ingredientes {
     private int quantidade;
     private String fabricante;
     private boolean glutem;
-
+    
     public String getNome() {
         return nome;
     }
