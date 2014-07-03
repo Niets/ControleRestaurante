@@ -1,12 +1,20 @@
 package restaurante;
 
-public class Ingredientes {
+public class Ingrediente {
     
     private String nome;
     private double peso;
     private int quantidade;
     private String fabricante;
     private boolean glutem;
+
+    public Ingrediente(String nome, double peso, String fabricante) {
+        this.nome = nome;
+        this.peso = peso;
+        this.fabricante = fabricante;
+    }
+    
+    
     
     public String getNome() {
         return nome;
