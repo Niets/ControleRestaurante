@@ -104,7 +104,7 @@ public class CadastroReceita extends javax.swing.JFrame {
         }
 
         if (novoRegistro == true) {
-            umaReceita = new Receita();
+            umaReceita = new Receita(jTextFieldNome.getText());
         } else {
             umaReceita.setNome(jTextFieldNome.getText());
         }
