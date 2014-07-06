@@ -337,7 +337,7 @@ public class CadastroPessoa extends javax.swing.JFrame {
         jButtonExcluir = new javax.swing.JButton();
         jButtonSalvar = new javax.swing.JButton();
         jButtonPesquisar = new javax.swing.JButton();
-        jLabelListaJudocas = new javax.swing.JLabel();
+        jLabelListaClientes = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTableListaPessoas = new javax.swing.JTable();
 
@@ -735,7 +735,7 @@ public class CadastroPessoa extends javax.swing.JFrame {
             }
         });
 
-        jLabelListaJudocas.setText("Lista de Clientes:");
+        jLabelListaClientes.setText("Lista de Clientes:");
 
         jTableListaPessoas.setModel(new javax.swing.table.DefaultTableModel 
             (
@@ -766,7 +766,7 @@ public class CadastroPessoa extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabelListaJudocas)
+                                .addComponent(jLabelListaClientes)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jButtonNovo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -798,7 +798,7 @@ public class CadastroPessoa extends javax.swing.JFrame {
                         .addComponent(jButtonSalvar)
                         .addComponent(jButtonCancelar))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jLabelListaJudocas)
+                    .addComponent(jLabelListaClientes)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(97, 97, 97)
@@ -851,17 +851,17 @@ public class CadastroPessoa extends javax.swing.JFrame {
 private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
     String pesquisa = JOptionPane.showInputDialog("Informe o nome do Judoca.");
     if (pesquisa != null) {
-        this.pesquisarJudoca(pesquisa);
+        this.pesquisarPessoa(pesquisa);
     }
 }//GEN-LAST:event_jButtonPesquisarActionPerformed
 
-    private void pesquisarJudoca(String nome) {
-        Pessoa judocaPesquisado = controlePessoa.pesquisar(nome);
+    private void pesquisarPessoa(String nome) {
+        Pessoa pessoaPesquisada = controlePessoa.pesquisar(nome);
 
-        if (judocaPesquisado == null) {
+        if (pessoaPesquisada == null) {
             exibirInformacao("Judoca não encontrado.");
         } else {
-            this.umaPessoa = judocaPesquisado;
+            this.umaPessoa = pessoaPesquisada;
             this.preencherCampos();
             this.habilitarDesabilitarCampos();
         }
@@ -871,7 +871,7 @@ private void jTableListaPessoasMouseClicked(java.awt.event.MouseEvent evt) {//GE
     if (jTableListaPessoas.isEnabled()) {
         DefaultTableModel model = (DefaultTableModel) jTableListaPessoas.getModel();
         String nome = (String) model.getValueAt(jTableListaPessoas.getSelectedRow(), 0);
-        this.pesquisarJudoca(nome);
+        this.pesquisarPessoa(nome);
     }
 }//GEN-LAST:event_jTableListaPessoasMouseClicked
 
@@ -964,7 +964,7 @@ private void jTableListaPessoasMouseClicked(java.awt.event.MouseEvent evt) {//GE
     private javax.swing.JLabel jLabelDataNascimento;
     private javax.swing.JLabel jLabelEstado;
     private javax.swing.JLabel jLabelIdade;
-    private javax.swing.JLabel jLabelListaJudocas;
+    private javax.swing.JLabel jLabelListaClientes;
     private javax.swing.JLabel jLabelLogradouro;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelNomeMae;
