@@ -9,6 +9,10 @@ public class Receita {
     private int numeroPessoas;
     private ArrayList<String> alergias;
 
+    public Receita(String nome) {
+        this.nome = nome;
+    }
+
     public String getNome() {
         return nome;
     }
