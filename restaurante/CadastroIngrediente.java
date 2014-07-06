@@ -10,13 +10,18 @@ import javax.swing.JOptionPane;
  *
  * @author niets
  */
-public class CadastroIngrediente extends javax.swing.JFrame {
+public class CadastroIngrediente extends javax.swing.JDialog {
 
     /**
      * Creates new form CadastroIngredientes
      */
-    public CadastroIngrediente() {
+    public CadastroIngrediente(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
+    }
+    
+    public Ingrediente getIngrediente() {
+        return this.ingrediente;
     }
     
     Ingrediente ingrediente;
@@ -38,8 +43,6 @@ public class CadastroIngrediente extends javax.swing.JFrame {
         jComboBoxQuantidade = new javax.swing.JComboBox();
         jButtonAdicionar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
-        jComboBoxGlutem = new javax.swing.JComboBox();
-        jLabelGlutem = new javax.swing.JLabel();
         jLabelFabricante = new javax.swing.JLabel();
         jTextFieldNome = new javax.swing.JTextField();
 
@@ -72,10 +75,6 @@ public class CadastroIngrediente extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxGlutem.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Contém", "Ñ Contém"}));
-
-        jLabelGlutem.setText("Glutem:");
-
         jLabelFabricante.setText("Fabricante:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -85,28 +84,28 @@ public class CadastroIngrediente extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelGlutem)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelNome)
-                            .addComponent(jLabelPeso)
-                            .addComponent(jLabelFaixa)
-                            .addComponent(jLabelFabricante))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jComboBoxGlutem, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jComboBoxQuantidade, 0, 108, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldPeso)))
-                                .addGap(24, 24, 24)
-                                .addComponent(jButtonAdicionar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButtonCancelar))
-                            .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabelNome)
+                    .addComponent(jLabelPeso)
+                    .addComponent(jLabelFaixa))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jComboBoxQuantidade, 0, 108, Short.MAX_VALUE)
+                        .addComponent(jTextFieldPeso))
+                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelFabricante)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jButtonAdicionar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonCancelar)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,17 +124,13 @@ public class CadastroIngrediente extends javax.swing.JFrame {
                     .addComponent(jComboBoxQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelGlutem)
-                    .addComponent(jComboBoxGlutem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelFabricante)
                     .addComponent(jTextFieldFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonAdicionar)
                     .addComponent(jButtonCancelar))
-                .addContainerGap())
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -159,16 +154,6 @@ public class CadastroIngrediente extends javax.swing.JFrame {
         ingrediente = new Ingrediente(jTextFieldNome.getText(), Double.parseDouble(jTextFieldPeso.getText()), jTextFieldFabricante.getText());
         
         this.setVisible(false);
-
-        switch (jComboBoxGlutem.getSelectedIndex()) {
-            case 0:
-            ingrediente.setGlutem(true);
-            break;
-
-            case 1:
-            ingrediente.setGlutem(false);
-            break;
-        }
 
         switch (jComboBoxQuantidade.getSelectedIndex()) {
             case 0:
@@ -249,19 +234,26 @@ public class CadastroIngrediente extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
-                new CadastroIngrediente().setVisible(true);
+                CadastroIngrediente dialog = new CadastroIngrediente(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdicionar;
     private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JComboBox jComboBoxGlutem;
     private javax.swing.JComboBox jComboBoxQuantidade;
     private javax.swing.JLabel jLabelFabricante;
     private javax.swing.JLabel jLabelFaixa;
-    private javax.swing.JLabel jLabelGlutem;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelPeso;
     private javax.swing.JTextField jTextFieldFabricante;

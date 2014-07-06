@@ -26,35 +26,34 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabelGlutem" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabelNome" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelPeso" alignment="0" min="-2" max="-2" attributes="1"/>
-                          <Component id="jLabelFaixa" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelFabricante" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextFieldFabricante" min="-2" pref="235" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jComboBoxGlutem" min="-2" pref="108" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jComboBoxQuantidade" pref="108" max="32767" attributes="0"/>
-                                      <Component id="jTextFieldPeso" max="32767" attributes="1"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="jButtonAdicionar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jButtonCancelar" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jTextFieldNome" min="-2" pref="235" max="-2" attributes="0"/>
-                      </Group>
+                  <Component id="jLabelNome" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelPeso" alignment="0" min="-2" max="-2" attributes="1"/>
+                  <Component id="jLabelFaixa" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jComboBoxQuantidade" pref="108" max="32767" attributes="0"/>
+                      <Component id="jTextFieldPeso" max="32767" attributes="1"/>
                   </Group>
+                  <Component id="jTextFieldNome" min="-2" pref="235" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabelFabricante" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jTextFieldFabricante" min="-2" pref="235" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="132" pref="132" max="-2" attributes="0"/>
+                      <Component id="jButtonAdicionar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButtonCancelar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -78,20 +77,15 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabelGlutem" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBoxGlutem" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelFabricante" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldFabricante" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <EmptySpace pref="29" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButtonAdicionar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -144,21 +138,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelarActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBoxGlutem">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel(new String[] { &quot;Cont&#xe9;m&quot;, &quot;&#xd1; Cont&#xe9;m&quot;})" type="code"/>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox()"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelGlutem">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Glutem:"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelFabricante">
       <Properties>
