@@ -45,11 +45,13 @@ public class CadastroIngrediente extends javax.swing.JDialog {
         jLabelFabricante = new javax.swing.JLabel();
         jTextFieldNome = new javax.swing.JTextField();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jLabelNome.setText("Nome:");
 
         jLabelPeso.setText("Peso:");
 
-        jLabelFaixa.setText("Qtd:");
+        jLabelFaixa.setText("Faixa:");
 
         jComboBoxQuantidade.setModel(new javax.swing.DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9"}));
         jComboBoxQuantidade.addActionListener(new java.awt.event.ActionListener() {

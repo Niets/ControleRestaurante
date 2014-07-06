@@ -35,8 +35,6 @@ public class CadastroAlergia extends javax.swing.JDialog {
         jButtonAdicionar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jLabelAlergia.setText("Alergia:");
 
         jButtonAdicionar.setText("Adicionar");
