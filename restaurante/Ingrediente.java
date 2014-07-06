@@ -1,20 +1,28 @@
 package restaurante;
 
+import java.util.ArrayList;
+
 public class Ingrediente {
     
     private String nome;
     private double peso;
     private int quantidade;
     private String fabricante;
-    private boolean glutem;
+    private ArrayList <String> alergias;
 
     public Ingrediente(String nome, double peso, String fabricante) {
         this.nome = nome;
         this.peso = peso;
         this.fabricante = fabricante;
     }
-    
-    
+
+    public ArrayList<String> getAlergias() {
+        return alergias;
+    }
+
+    public void setAlergias(ArrayList<String> alergias) {
+        this.alergias = alergias;
+    }       
     
     public String getNome() {
         return nome;
@@ -46,17 +54,6 @@ public class Ingrediente {
 
     public void setFabricante(String fabricante) {
         this.fabricante = fabricante;
-    }
-
-    public boolean isGlutem() {
-        return glutem;
-    }
-
-    public void setGlutem(boolean glutem) {
-        this.glutem = glutem;
-    }
-    
-    
-    
+    }    
     
 }

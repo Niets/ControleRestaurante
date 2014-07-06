@@ -5,7 +5,9 @@ import java.util.ArrayList;
 public class Receita {
     
     private String nome;
-    private ArrayList<Ingrediente> listaIngredientes;
+    private ArrayList<Ingrediente> ingredientes;
+    private int numeroPessoas;
+    private ArrayList<String> alergias;
 
     public String getNome() {
         return nome;
@@ -15,14 +17,29 @@ public class Receita {
         this.nome = nome;
     }
 
-    public ArrayList<Ingrediente> getListaIngredientes() {
-        return listaIngredientes;
+    public int getNumeroPessoas() {
+        return numeroPessoas;
     }
 
-    public void setListaIngredientes(ArrayList<Ingrediente> listaIngredientes) {
-        this.listaIngredientes = listaIngredientes;
+    public void setNumeroPessoas(int numeroPessoas) {
+        this.numeroPessoas = numeroPessoas;
     }
-    
+
+    public ArrayList<Ingrediente> getIngredientes() {
+        return ingredientes;
+    }
+
+    public void setIngredientes(ArrayList<Ingrediente> ingredientes) {
+        this.ingredientes = ingredientes;
+    }
+
+    public ArrayList<String> getAlergias() {
+        return alergias;
+    }
+
+    public void setAlergias(ArrayList<String> alergias) {
+        this.alergias = alergias;
+    }
     
     
 }
