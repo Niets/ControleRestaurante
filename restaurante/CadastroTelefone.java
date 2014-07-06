@@ -1,36 +1,27 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package restaurante;
 
-/**
- *
- * @author niets
- */
-public class CadastroTelefone extends javax.swing.JFrame {
+public class CadastroTelefone extends javax.swing.JDialog {
     private String telefone;
-    /**
-     * Creates new form CadastroTelefone
-     */
-    public CadastroTelefone() {
+
+    public String getTelefone() {
+        return this.telefone;
+    }
+    
+    public CadastroTelefone(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
-    public String getTelefone() {
-        return telefone;
-    }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabelTelefone = new javax.swing.JLabel();
         jTextFieldTelefone = new javax.swing.JTextField();
-        jButtonAdicionar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
+        jButtonAdicionar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabelTelefone.setText("Telefone:");
 
@@ -40,17 +31,17 @@ public class CadastroTelefone extends javax.swing.JFrame {
             }
         });
 
-        jButtonAdicionar.setText("Adicionar");
-        jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAdicionarActionPerformed(evt);
-            }
-        });
-
         jButtonCancelar.setText("Cancelar");
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
+            }
+        });
+
+        jButtonAdicionar.setText("Adicionar");
+        jButtonAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAdicionarActionPerformed(evt);
             }
         });
 
@@ -64,7 +55,7 @@ public class CadastroTelefone extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabelTelefone)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE))
+                        .addComponent(jTextFieldTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButtonAdicionar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -88,18 +79,18 @@ public class CadastroTelefone extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
+    this.telefone = jTextFieldTelefone.getText();
+    this.setVisible(false);
+}//GEN-LAST:event_jButtonAdicionarActionPerformed
+
+private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+    this.setVisible(false);
+}//GEN-LAST:event_jButtonCancelarActionPerformed
+
     private void jTextFieldTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTelefoneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldTelefoneActionPerformed
-
-    private void jButtonAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdicionarActionPerformed
-        this.telefone = jTextFieldTelefone.getText();
-        this.setVisible(false);
-    }//GEN-LAST:event_jButtonAdicionarActionPerformed
-
-    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,10 +119,19 @@ public class CadastroTelefone extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
-                new CadastroTelefone().setVisible(true);
+                CadastroTelefone dialog = new CadastroTelefone(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }

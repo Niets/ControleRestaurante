@@ -14,7 +14,7 @@ public class ControlePessoa {
         this.listaPessoas = new ArrayList<Pessoa>();
     }
     
-    public ArrayList<Pessoa> getListaJudocas() {
+    public ArrayList<Pessoa> getListaPessoas() {
         return listaPessoas;
     }
     
