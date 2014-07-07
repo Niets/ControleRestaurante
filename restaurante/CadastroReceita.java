@@ -22,6 +22,7 @@ public class CadastroReceita extends javax.swing.JFrame {
         this.ingredienteListModel = new DefaultListModel();
         this.alergiaListModel = new DefaultListModel();
         this.jListAlergia.setModel(alergiaListModel);
+        this.jListIngredientes.setModel(ingredienteListModel);
         this.jTableListaReceitas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
 
