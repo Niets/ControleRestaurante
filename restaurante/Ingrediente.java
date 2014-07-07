@@ -54,6 +54,10 @@ public class Ingrediente {
 
     public void setFabricante(String fabricante) {
         this.fabricante = fabricante;
-    }    
+    }
     
+    @Override
+    public String toString() {
+        return this.nome + " - " + this.peso + "Kg - Qut:" + this.quantidade;
+    }    
 }
